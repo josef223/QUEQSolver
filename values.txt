@@ -1,0 +1,4 @@
+# Input File:
+w   # value for a
+r   # value for b
+t   # value for c
