@@ -1,3 +1,11 @@
+''' QUEQSolver
+
+Quadratic Equation Solver that prints all steps and plots the results
+
+Args:
+ a (array): variable
+Returns:
+'''
 # QUEQ Solver: Quadratic Equation Solver that prints all steps and plots the results
 # last modified: 4.11.2023
 
@@ -22,6 +30,17 @@ def read_file(filename):
     return values
 
 def inputValues():
+    '''
+    input
+    
+    Read the input from file, command-line or keyboard input
+    
+    Args:
+    
+    Returns:
+
+    '''
+
     try:
         if len(sys.argv) == 4:
             a, b, c = sys.argv[1], sys.argv[2], sys.argv[3]
