@@ -1,5 +1,21 @@
 # plotQE: plot the quadratic equation and results
 # last modified: 4.11.2023
+'''
+plotQE: 
+
+plot the quadratic equation and results
+
+Args:
+a (datatype)
+b (datatype)
+c (datatype)
+x1 (datatype)
+x2 (datatype)
+
+Returns:
+
+
+'''
 
 import matplotlib.pyplot as plt
 import numpy as np
