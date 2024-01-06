@@ -11,6 +11,9 @@ Welcome to QUEQSolver's documentation!
    :caption: Contents:
 
    qesolver.rst
+   calcStep.rst
+   plotQE.rst
+   examples.rst
 
 Indices and tables
 ==================
