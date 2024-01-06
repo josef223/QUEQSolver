@@ -36,4 +36,11 @@ One sentence description:
   </tr>
 </table>
 
+<table style="width: 100%; border: none;">
+    <tr>
+        <td style="text-align: left; border: none;"><a href="https://wetterwien22.at/impressum.html">Impr
+   essum</a></td>
+        <td style="text-align: right; border: none;">6.1.2024</td>
+    </tr>
+</table>
 
