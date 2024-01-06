@@ -79,6 +79,19 @@ def inputValues():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
+def run_quadraticEQSolver(a,b,c):
+    '''
+    Function runs the quadratic equation solver directly
+
+    Args:
+        a, b, c (numeric or string): input coefficients of the quadratic equ
+    ation
+    '''
+    plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
+    if plotable:
+        QEplot(a,b,c,x1,x2)
+
+
 if __name__ == "__main__":
     [a,b,c]=inputValues()
     plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
@@ -88,4 +101,6 @@ if __name__ == "__main__":
 # input = main file
 # print step
 # plot
+
+
 

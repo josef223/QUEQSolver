@@ -18,7 +18,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('/home/pi/github/QUEQSolver'))
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'nbsphinx']
 
 templates_path = ['_templates']
 exclude_patterns = []

@@ -176,3 +176,13 @@ Plot:
    :alt: complex case - quadratic equation
    :width: 800px
    :align: center
+
+Jupyter-Notebook file with Examples
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   notebooks/QUEQSolver.ipynb
+
