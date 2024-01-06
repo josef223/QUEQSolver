@@ -26,4 +26,5 @@ One sentence description:
 - Quadratic equation solver that prints out all steps to solve and plotting.
 
 
-[Impressum](https://wetterwien22.at/impressum.html)		last changed: 6.1.2024
+<p align="left">[Impressum](https://wetterwien22.at/impressum.html)</p><p align="right">last changed: 6.1.2024</p>
+
