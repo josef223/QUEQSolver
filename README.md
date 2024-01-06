@@ -29,7 +29,7 @@ One sentence description:
 
 [Impressum](https://wetterwien22.at/impressum.html)
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
+<div style="display: flex; justify-content: space-between; width: 100%;">
     <a href="https://wetterwien22.at/impressum.html">Impressum</a>
     <span>last changed: 6.1.2024</span>
 </div>
