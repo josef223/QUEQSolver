@@ -21,6 +21,17 @@ from calcStep import quadraticEQSolver
 from plotQE import QEplot
 
 def read_file(filename):
+    '''
+    Function reads values from the specified file
+
+    Description:
+    The first line is skipped because it contains the header. Then it parses each line, splitting it by '#' and stripping off all additional whitespaces such that the numerical value can be extracted.
+    Args:
+    filename (str): name of the file to read
+
+    Returns:
+    list: A list of values read from the file
+    '''
     values=[]
     with open(filename, 'r') as file:
         next(file); #skip one line as header
@@ -31,14 +42,21 @@ def read_file(filename):
 
 def inputValues():
     '''
-    input
-    
     Read the input from file, command-line or keyboard input
     
     Args:
+    None
     
     Returns:
+    tuple: containing three values (a,b,c) representing the coefficients of a quadratic equation
 
+    Description:
+    3 different input Methods:
+    - If the 3 arguments are passed via command line, they are used
+    - If the '-f' flag is passed with a filename, it reads the coefficient from the specified file
+    - If there are no valid command-line inputs, it prompts the user to enter the coefficients manually.
+    - It replaces 'i', 'I', or 'J' with 'j' to support different complex number notations
+    - It is able to handle errors like 'file not found' or 'unexpected errors'
     '''
 
     try:
@@ -74,3 +92,4 @@ if plotable:
 # input = main file
 # print step
 # plot
+

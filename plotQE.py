@@ -22,13 +22,42 @@ import numpy as np
 import sympy as sp
 
 def quadratic(x, a, b, c):
+    '''
+    Function calculates the value of the quadratic equation for a given x value
+
+    Args:
+    x (float): given value, for which the quadratic equation is evaluated
+    a, b, c (float): Coefficients of the quadratic equation
+    
+    Returns:
+    float: The solution of the quadratic equation for the given value x
+    '''
     a=float(a); b=float(b); c=float(c)
     return a * x**2 + b * x + c
 
 def complex_quadratic(z,a,b,c):
+    '''
+    Function calculates the quadratic equation for a given complex number
+
+    Args:
+    z (complex): complex number as input for which the quadratic equation is solved
+    a, b, c (complex): Coefficients of the quadratic equation
+
+    Returns:
+    complex: value of the quadratic equation at the given complex number z
+    '''
     return a * z**2 + b * z + c
 
 def plotComplexPlane(a,b,c):
+    '''
+    Function plots the phase and roots of a quadratic eqation with complex coefficients
+
+    Args:
+    a, b, c (complex): Coefficients of the quadratic equation
+
+    Description:
+    Generates a heatmap of the phase of the quadratic equation while using a complex grid. It also plots the complex roots of the equation.
+    '''
     # Generate a grid of complex numbers
     x = np.linspace(-10, 10, 400)
     y = np.linspace(-10, 10, 400)
@@ -38,7 +67,6 @@ def plotComplexPlane(a,b,c):
     a=complex(a); b=complex(b); c=complex(c)
     D = b**2 - 4*a*c
     # Calculate the two roots using the quadratic formula
-    # Use `numpy.lib.scimath.sqrt` to correctly handle the square root of negative numbers
     root1 = (-b - np.lib.scimath.sqrt(D)) / (2*a)
     root2 = (-b + np.lib.scimath.sqrt(D)) / (2*a)
 
@@ -68,6 +96,16 @@ def plotComplexPlane(a,b,c):
     plt.show()
 
 def plotReal(a,b,c,x1,x2):
+    '''
+    Plots the real roots of a quadratic equation
+
+    Args:
+    a, b, c (float): Coefficients of the quadratic equation
+    x1, x2 (float): Real roots of the quadratic equation
+
+    Description:
+    Plots the quadratic curve and marks the real roots on the plot
+    '''
     x = np.linspace(-10, 10, 400)
     y = quadratic(x, a, b, c)
 
@@ -84,6 +122,16 @@ def plotReal(a,b,c,x1,x2):
     plt.show()
     
 def QEplot(a,b,c,x1,x2):
+    '''
+    Function decides on the roots if a real or a complex quadratic equation is plotted
+
+    Args:
+    a, b, c (float or complex): Coefficients of the quadratic equation
+    x1, x2 (float or complex): Roots of the quadratic equation
+
+    Description:
+    Determines if the roots are real or complex and call then the appropriate plot function (plotReal or plotComplex)
+    '''
     if (x1.is_real and x2.is_real):  
         print('real')
         a=float(a.real); b=float(b.real); c=float(c.real)
@@ -92,3 +140,4 @@ def QEplot(a,b,c,x1,x2):
         print('complex')
         #print(type(x1))
         plotComplexPlane(a,b,c)
+        

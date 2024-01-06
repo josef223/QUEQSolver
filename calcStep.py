@@ -5,9 +5,28 @@ import numpy as np
 import sympy as sp
 
 def is_numeric(value):
+    '''
+    Function to check if the value is numeric (int, float or complex)
+
+    Args:
+        value (any type): input variable that is checked, any type
+
+    Returns:
+        bool: True if value is numeric (int, float or complex)
+    '''
     return isinstance(value, (int, float, complex))
 
 def is_numeric_or_complex(value):
+    '''
+    Function checks if a value can be converted to a complex number
+
+    Args:
+    value (any type): input variable that is checked, any type
+
+    Returns:
+    bool: True if the value can be converted to complex datatype
+    '''
+    
     try:
         complex(value)
     except ValueError:
@@ -18,6 +37,15 @@ def is_numeric_or_complex(value):
         return True
     
 def quadraticEQSolver(a,b,c):
+    '''
+    Function solved a quadratic equation and prints all steps
+
+    Args:
+    a, b, c (numeric or string): input coefficients of the quadratic equation
+
+    Returns:
+    tuple: A tuple containing a boolean if the equation is plotable, the roots x1 and x2 as well as the coefficients a, b, c
+    '''
     # Assign values as strings
     #a=5; b=8; c=3
     #a=1; b=3; c=8
