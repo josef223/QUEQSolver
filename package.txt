@@ -1,0 +1,49 @@
+#pip install build
+# whl erstellen
+# python -m build
+
+
+
+cd dist
+pip install QUEQSolver-1.0.0-py3-none-any.whl
+pip uninstall QUEQSolver
+
+from QUEQSolver.calcStep import *
+from QUEQSolver.plotQE import *
+from QUEQSolver.qesolver import *
+
+# run this in Python console:
+from QUEQSolver.qesolver import run_quadraticEQSolver
+run_quadraticEQSolver(1,2,3)
+
+#########################################
+pi@vm38345:~/projekt/QUEQSolver $ tree
+.
+├── dist
+│   ├── quadratic_roots.png
+│   ├── QUEQSolver-1.0.0-py3-none-any.whl
+│   └── QUEQSolver-1.0.0.tar.gz
+├── LICENSE
+├── pyproject.toml
+├── QUEQSolver
+│   ├── calcStep.py
+│   ├── __init__.py
+│   ├── plotQE.py
+│   ├── qesolver.py
+│   └── test
+│       ├── __pycache__
+│       │   ├── test_calcStep.cpython-38-PYTEST.pyc
+│       │   ├── test_plotQE.cpython-38-PYTEST.pyc
+│       │   └── test_qesolver.cpython-38-PYTEST.pyc
+│       ├── test_calcStep.py
+│       ├── test_plotQE.py
+│       └── test_qesolver.py
+├── QUEQSolver.egg-info
+│   ├── dependency_links.txt
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   └── top_level.txt
+└── README.md
+
+5 directories, 20 files
+

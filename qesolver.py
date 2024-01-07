@@ -9,8 +9,8 @@
 last modified: 4.11.2023
 '''
 import sys
-from calcStep import quadraticEQSolver
-from plotQE import QEplot
+from QUEQSolver.calcStep import quadraticEQSolver
+from QUEQSolver.plotQE import QEplot
 
 def read_file(filename):
     '''
