@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'QUEQSolver'
-copyright = '2023, 1'
-author = '1'
+copyright = '2023 - github:josef223'
+author = 'josef223'
 release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------

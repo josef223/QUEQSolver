@@ -26,13 +26,15 @@ def read_file(filename):
         list: A list of values read from the file
     '''
     values=[]
-    with open(filename, 'r') as file:
-        next(file); #skip one line as header
-        for line in file:
-            number=line.split('#')[0].strip()
-            values.append(number)
-    return values
-
+    try:
+        with open(filename, 'r') as file:
+            next(file); #skip one line as header
+            for line in file:
+                number=line.split('#')[0].strip()
+                values.append(number)
+            return values
+    except StopIteration:
+        raise ValueError("The file does not have the expected format")
 def inputValues():
     '''
     Read the input from file, command-line or keyboard input
@@ -84,23 +86,18 @@ def run_quadraticEQSolver(a,b,c):
     Function runs the quadratic equation solver directly
 
     Args:
-        a, b, c (numeric or string): input coefficients of the quadratic equ
-    ation
+        a, b, c (numeric or string): input coefficients of the quadratic equation
     '''
     plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
     if plotable:
         QEplot(a,b,c,x1,x2)
 
 
-if __name__ == "__main__":
+def main():
     [a,b,c]=inputValues()
     plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
     if plotable:
         QEplot(a,b,c,x1,x2)
 
-# input = main file
-# print step
-# plot
-
-
-
+if __name__ == "__main__":
+    main()

@@ -186,3 +186,4 @@ Jupyter-Notebook file with Examples
 
    notebooks/QUEQSolver.ipynb
 
+`Impressum <https://wetterwien22.at/impressum.html>`_

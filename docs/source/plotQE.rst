@@ -7,3 +7,5 @@ Plots the complex or real solution of a quadratic equation. It is displayed and 
 
 .. automodule:: plotQE
    :members:
+
+`Impressum <https://wetterwien22.at/impressum.html>`_

@@ -76,7 +76,7 @@ def plotComplexPlane(a,b,c):
     plt.ylabel('Imaginary Part')
     plt.grid(True)
     plt.legend()
-    plt.title('Complex Roots of the Quadratic Equation')
+    plt.title('Complex Roots of the Quadratic Equation\n'+f'{a}*x^2 + {b}*x + {c} = 0')
     plt.savefig('quadratic_roots.png')
     plt.show()
 
@@ -111,12 +111,12 @@ def QEplot(a,b,c,x1,x2):
     '''
     Function decides on the roots if a real or a complex quadratic equation is plotted
 
-   Description:
+    Description:
        Determines if the roots are real or complex and call then the appropriate plot function (plotReal or plotComplex)
 
     Args:
        a, b, c (float or complex): Coefficients of the quadratic equation
-       x1, x2 (float or complex): Roots of the quadratic equation 
+       x1, x2 (SymPy Expr): Roots of the quadratic equation 
     '''
     if (x1.is_real and x2.is_real):  
         print('real')
@@ -126,4 +126,3 @@ def QEplot(a,b,c,x1,x2):
         print('complex')
         #print(type(x1))
         plotComplexPlane(a,b,c)
-        

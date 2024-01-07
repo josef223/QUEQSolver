@@ -29,7 +29,7 @@ def is_numeric_or_complex(value):
     
     try:
         complex(value)
-    except ValueError:
+    except (ValueError, TypeError):
         # The conversion failed, so it's not a numeric input
         return False
     else:

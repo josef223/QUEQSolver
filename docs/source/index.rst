@@ -21,3 +21,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+`Impressum <https://wetterwien22.at/impressum.html>`_
+
