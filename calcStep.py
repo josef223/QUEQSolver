@@ -92,7 +92,11 @@ def quadraticEQSolver(a,b,c):
     x_sym = sp.symbols('x')
     equation = sp.Eq(x_sym**2 + p_expr*x_sym + q_expr, 0)
     solutions = sp.solve(equation, x_sym)
-    x2, x1 = solutions
+    if len(solutions) == 1:
+        # Only one solution (repeated root)
+        x1 = x2 = solutions[0]
+    else:
+        x2, x1 = solutions
 
     print(f'x1 = {x1.evalf()} \nx2 = {x2.evalf()}')
     return plotable,x1,x2,a,b,c
