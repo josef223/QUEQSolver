@@ -1,8 +1,6 @@
 #pip install build
 # whl erstellen
-# python -m build
-
-
+python -m build
 
 cd dist
 pip install QUEQSolver-1.0.0-py3-none-any.whl
