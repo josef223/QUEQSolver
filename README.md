@@ -1,6 +1,6 @@
 # QUEQSolver
 
-Full documentation is available at [https://wetterwien22.at/projekte/QUEQsolver](https://wetterwien22.at/projekte/QUEQsolver).
+Full documentation is available at [https://wetterwien22.at/projekte/QUEQSolver](https://wetterwien22.at/projekte/QUEQSolver).
 
 
 Who is this program intended for?
