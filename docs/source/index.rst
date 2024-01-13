@@ -14,6 +14,7 @@ Welcome to QUEQSolver's documentation!
    calcStep.rst
    plotQE.rst
    examples.rst
+   install.rst
 
 Indices and tables
 ==================
