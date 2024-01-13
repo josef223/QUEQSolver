@@ -12,15 +12,20 @@ import sys
 from QUEQSolver.calcStep import quadraticEQSolver
 from QUEQSolver.plotQE import QEplot
 
-def read_file(filename):
+# Pydantic:
+from pydantic import FilePath
+from pydantic import BaseModel, field_validator, ConfigDict
+from typing import Union
+
+def read_file(filename: FilePath):
     '''
     Function reads values from the specified file
 
     Description:
         The first line is skipped because it contains the header. Then it  parses each line, splitting it by '#' and stripping off all additional whitespaces such that the numerical value can be extracted.
-   
+
     Args:
-        filename (str): name of the file to read
+        filename (FilePath): name of the file to read
 
     Returns:
         list: A list of values read from the file
@@ -38,7 +43,7 @@ def read_file(filename):
 def inputValues():
     '''
     Read the input from file, command-line or keyboard input
-    
+
     Description: 3 different input Methods:
          - If the 3 arguments are passed via command line, they are used
          - If the '-f' flag is passed with a filename, it reads the coefficient from the specified file
@@ -48,7 +53,7 @@ def inputValues():
 
     Args:
         None
-    
+
     Returns:
         tuple: containing three values (a,b,c) representing the coefficients of a quadratic equation
     '''
@@ -81,17 +86,24 @@ def inputValues():
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
+####### Pydantic for run_quadraticEQSolver ########
+class Coefficients(BaseModel):
+    a: Union[str, float, int, complex]
+    b: Union[str, float, int, complex]
+    c: Union[str, float, int, complex]
+    model_config = ConfigDict(arbitrary_types_allowed=True, extra='ignore')
+
 def run_quadraticEQSolver(a,b,c):
     '''
     Function runs the quadratic equation solver directly
 
     Args:
-        a, b, c (numeric or string): input coefficients of the quadratic equation
+        a, b, c (int, float, str, complex): input coefficients of the quadratic equation
     '''
-    plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
+    coeffs = Coefficients(a=a, b=b, c=c)
+    plotable,x1,x2,a,b,c=quadraticEQSolver(coeffs.a,coeffs.b,coeffs.c)
     if plotable:
         QEplot(a,b,c,x1,x2)
-
 
 def main():
     [a,b,c]=inputValues()
@@ -101,3 +113,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

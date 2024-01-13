@@ -183,4 +183,3 @@ def test_main(mock_qeplot, mock_quadratic_eq_solver, mock_input_values):
     mock_input_values.assert_called_once()
     mock_quadratic_eq_solver.assert_called_once_with('1', '2', '3')
     mock_qeplot.assert_called_once_with('a', 'b', 'c', 'x1', 'x2')
-
