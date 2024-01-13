@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "QUEQSolver"
 version = "1.0.0"
-description = "Quadratic equation solver that prints out all steps to solve and plotting"
+description = "Quadratic equation solver that prints out all steps to solve and plotting"
 authors = [{name = "josef223", email = "info@wetterstationwien22.at"}]
 license = {file = "LICENSE"}
 readme = "README.md"
