@@ -6,9 +6,9 @@ import tempfile
 import os 
 import pytest
 import cmath
-import qesolver as qe
-import plotQE as qeplot
-from qesolver import *
+import QUEQSolver.qesolver as qe
+import QUEQSolver.plotQE as qeplot
+from QUEQSolver.qesolver import *
 
 # Test function for quadraticEQSolver
 def test_run_quadraticEQSolver():
