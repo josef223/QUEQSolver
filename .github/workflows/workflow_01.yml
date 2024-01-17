@@ -36,3 +36,8 @@ jobs:
       run: |
         coverage report
       working-directory: ./
+
+    - name: Generate coverage badge
+      uses: tj-actions/coverage-badge-py@v0
+      with:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
