@@ -1,4 +1,4 @@
 numpy
 matplotlib
-
+sympy
 # one per line
