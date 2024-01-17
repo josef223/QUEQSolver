@@ -29,4 +29,4 @@ jobs:
       run: pip install .
 
     - name: Test with pytest, via coverage
-      run: coverage run -m pytest
+      run: coverage run -m pytest /test
