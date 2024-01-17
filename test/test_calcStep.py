@@ -3,7 +3,7 @@ sys.path.append('../')
 
 import pytest
 import cmath
-from calcStep import *
+from QUEQSolver.calcStep import *
 
 def test_is_numeric():
     assert is_numeric(5) == True

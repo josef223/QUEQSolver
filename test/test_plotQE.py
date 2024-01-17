@@ -3,7 +3,7 @@ sys.path.append('../')
 
 import pytest
 import cmath
-from plotQE import *
+from QUEQSolver.plotQE import *
 
 def test_quadratic():
     assert quadratic(2, 1, -3, 2) == pytest.approx(0)
