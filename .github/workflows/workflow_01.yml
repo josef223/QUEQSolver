@@ -21,7 +21,7 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
 
-    - name: Install additional packages
+    - name: Install additional packages for testing
       run: |
         pip install pytest coverage
 
@@ -30,4 +30,9 @@ jobs:
 
     - name: Test with pytest, via coverage
       run: coverage run -m pytest
+      working-directory: ./
+
+    - name: Generate coverage report
+      run: |
+        coverage report
       working-directory: ./
