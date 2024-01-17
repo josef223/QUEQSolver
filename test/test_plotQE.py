@@ -55,8 +55,8 @@ def test_plotReal(mock_show, mock_savefig, mock_scatter, mock_legend, mock_grid,
     mock_title.assert_called()
 
 
-@patch('plotQE.plotReal')
-@patch('plotQE.plotComplexPlane')
+@patch('QUEQSolver.plotQE.plotReal')
+@patch('QUEQSolver.plotQE.plotComplexPlane')
 def test_QEplot(mock_plotComplexPlane, mock_plotReal):
     from sympy import sympify
     QEplot(1, -3, 2, sympify(1),sympify(-2))  # Real roots
