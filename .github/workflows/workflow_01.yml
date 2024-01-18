@@ -14,46 +14,7 @@ jobs:
     - uses: actions/setup-python@v3
       with:
         python-version: '3.10'
-
-    - name: Push Changes
-      run: git push origin HEAD:feature
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Push Changes
-      run: |
-       git push https://${{ secrets.TESTB }}@github.com/josef223/QUEQSolver.git HEAD:feature
-
-    - name: Push Changes
-      run: git push origin HEAD:feature
-      env:
-        GITHUB_TOKEN: ${{ secrets.TESTB }}
-
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-
-    - name: Create a Custom File
-      run: echo "This is a test file" > testfile.txt
-
-    - name: Commit the Custom File
-      run: |
-          git config --local user.email "a00300537@unet.univie.ac.at"
-          git config --local user.name "josef223"
-          git add testfile.txt
-          git commit -m "Add custom test file"
-
-    - name: Push Changes
-      run: git push origin HEAD
-      env:
-          GITHUB_TOKEN: ${{ secrets.TESTB }}
-    - name: Test GitHub Token
-      run: |
-          curl -H "Authorization: token ${{ secrets.TESTB }}" https://api.github.com/user
-    - name: Push changes
-      if: steps.verify-changed-files.outputs.files_changed == 'true'
-      run: |
-         git push https://x-access-token:${{ secrets.TESTA }}@github.com/josef223/QUEQSolver.git HEAD:feature
-
+        
     - name: Upgrade pip
       run: python -m pip install --upgrade pip
 
@@ -97,5 +58,5 @@ jobs:
       if: steps.verify-changed-files.outputs.files_changed == 'true'
       uses: ad-m/github-push-action@master
       with:
-          github_token: ${{ secrets.TESTA }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: feature
