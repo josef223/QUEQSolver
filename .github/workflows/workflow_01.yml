@@ -1,70 +1,24 @@
-name: Python package
+name: Simple Push Test
 
 on:
   workflow_dispatch:
 
 jobs:
-  build:
-
+  test-push:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
-    - uses: actions/setup-python@v3
-      with:
-        python-version: '3.10'
-        
-    - name: Upgrade pip
-      run: python -m pip install --upgrade pip
-
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-
-    - name: Install additional packages for testing
+    - name: Make a trivial change
       run: |
-        pip install pytest coverage
+        echo "Test push" >> test.txt
 
-    - name: Install the package
-      run: pip install .
-
-    - name: Test with pytest, via coverage
-      run: coverage run -m pytest
-      working-directory: ./
-
-    - name: Generate coverage report
-      run: coverage report
-      working-directory: ./
-
-
-
-
-    #- name: Run coverage
-    #  run: |
-    #    coverage run -m pytest
-    #    coverage report
-    #    working-directory: ./
-
-    - name: Coverage Badge
-      uses: tj-actions/coverage-badge-py@v2
-
-    - name: Verify Changed files
-      uses: tj-actions/verify-changed-files@v16
-      id: verify-changed-files
-      with:
-        files: coverage.svg
-
-    - name: Commit files
-      if: steps.verify-changed-files.outputs.files_changed == 'true'
+    - name: Commit and Push
       run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add coverage.svg
-        git commit -m "Updated coverage.svg"
-
-    - name: Push changes
-      if: steps.verify-changed-files.outputs.files_changed == 'true'
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        git config --local user.email "actions@users.noreply.github.com"
+        git config --local user.name "GitHub Actions"
+        git add .
+        git commit -m "Test push from GitHub Actions"
+        git push
