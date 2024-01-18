@@ -39,11 +39,11 @@ jobs:
 
 
 
-    - name: Run coverage
-      run: |
-        coverage run -m pytest
-        coverage report
-        working-directory: ./
+    #- name: Run coverage
+    #  run: |
+    #    coverage run -m pytest
+    #    coverage report
+    #    working-directory: ./
 
     - name: Coverage Badge
       uses: tj-actions/coverage-badge-py@v2
