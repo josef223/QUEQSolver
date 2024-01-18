@@ -31,7 +31,7 @@ jobs:
     - name: Push Changes
       run: git push origin HEAD
       env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TESTA }}
     - name: Test GitHub Token
       run: |
           curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" https://api.github.com/user
