@@ -1,5 +1,7 @@
 # QUEQSolver
 
+![Coverage Image](./coverage.svg)
+
 Full documentation is available at [https://wetterwien22.at/projekte/QUEQSolver](https://wetterwien22.at/projekte/QUEQSolver).
 
 

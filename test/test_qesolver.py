@@ -108,7 +108,7 @@ def test_inputValues_file_with_insufficient_data():
 # Test: GenericExceptionHandling
 from unittest.mock import patch, MagicMock
 
-@patch('qesolver.read_file', side_effect=Exception('Test error'))
+@patch('QUEQSolver.qesolver.read_file', side_effect=Exception('Test error'))
 @patch('sys.argv', ['script_name', '-f', 'values.txt'])
 @patch('builtins.print')
 def test_inputValues_generic_exception(mock_print, mock_read_file):
@@ -116,7 +116,7 @@ def test_inputValues_generic_exception(mock_print, mock_read_file):
     mock_print.assert_called_with("An unexpected error occurred: Test error")
 
 # run_quadraticEQSolver valid
-@patch('qesolver.QEplot')
+@patch('QUEQSolver.qesolver.QEplot')
 def test_run_quadraticEQSolver_valid(mock_plot):
     mock_plot.return_value = None 
     qe.run_quadraticEQSolver(1, -3, 2)
@@ -125,7 +125,7 @@ def test_run_quadraticEQSolver_valid(mock_plot):
 
 # run_quadraticEQSolver with complex inputs
 from sympy import I, simplify, Abs
-@patch('qesolver.QEplot')
+@patch('QUEQSolver.qesolver.QEplot')
 def test_run_quadraticEQSolver_complex(mock_plot):
     mock_plot.return_value = None
     qe.run_quadraticEQSolver(complex(1, 1), complex(1, -1), complex(1, 0))
@@ -162,7 +162,7 @@ from unittest.mock import patch, MagicMock
 # Test inputValues with '-f' flag and default 'values.txt' file
 @patch('sys.argv', ['script_name', '-f'])
 @patch('builtins.print')
-@patch('qesolver.read_file', return_value=('1', '2', '3'))
+@patch('QUEQSolver.qesolver.read_file', return_value=('1', '2', '3'))
 def test_inputValues_default_file(mock_read_file, mock_print):
     a, b, c = qe.inputValues()
     # Check that read_file was called with 'values.txt'
@@ -174,9 +174,9 @@ def test_inputValues_default_file(mock_read_file, mock_print):
 
 # Testing main()
 from unittest.mock import patch
-@patch('qesolver.inputValues', return_value=('1', '2', '3'))
-@patch('qesolver.quadraticEQSolver', return_value=(True, 'x1', 'x2', 'a', 'b', 'c'))
-@patch('qesolver.QEplot')
+@patch('QUEQSolver.qesolver.inputValues', return_value=('1', '2', '3'))
+@patch('QUEQSolver.qesolver.quadraticEQSolver', return_value=(True, 'x1', 'x2', 'a', 'b', 'c'))
+@patch('QUEQSolver.qesolver.QEplot')
 def test_main(mock_qeplot, mock_quadratic_eq_solver, mock_input_values):
     qe.main()
     # Assert that these functions were called
