@@ -1,9 +1,0 @@
-name: Python package
-
-on:
-  workflow_dispatch:
-
-- name: Push Changes
-  run: git push origin HEAD:feature
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
