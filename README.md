@@ -11,7 +11,7 @@ Feature:
 
 Main:
 
-[![Python package](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml/badge.svg?branch=main)](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml)
+[![Python package](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml/badge.svg)](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml)
 
 
 Full documentation is available at [https://wetterwien22.at/projekte/QUEQSolver](https://wetterwien22.at/projekte/QUEQSolver).
