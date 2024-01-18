@@ -17,12 +17,12 @@ jobs:
 
     - name: Push Changes
       run: |
-       git push https://${{ secrets.TESTA }}@github.com/josef223/QUEQSolver.git HEAD:feature
+       git push https://${{ secrets.TESTB }}@github.com/josef223/QUEQSolver.git HEAD:feature
 
     - name: Push Changes
       run: git push origin HEAD:feature
       env:
-        GITHUB_TOKEN: ${{ secrets.TESTA }}
+        GITHUB_TOKEN: ${{ secrets.TESTB }}
 
     - name: Checkout Repository
       uses: actions/checkout@v3
@@ -40,10 +40,10 @@ jobs:
     - name: Push Changes
       run: git push origin HEAD
       env:
-          GITHUB_TOKEN: ${{ secrets.TESTA }}
+          GITHUB_TOKEN: ${{ secrets.TESTB }}
     - name: Test GitHub Token
       run: |
-          curl -H "Authorization: token ${{ secrets.TESTA }}" https://api.github.com/user
+          curl -H "Authorization: token ${{ secrets.TESTB }}" https://api.github.com/user
     - name: Push changes
       if: steps.verify-changed-files.outputs.files_changed == 'true'
       run: |
