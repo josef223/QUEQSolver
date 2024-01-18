@@ -43,6 +43,7 @@ jobs:
       run: |
         coverage run ...
         coverage report -m
+        working-directory: ./
 
     - name: Coverage Badge
       uses: tj-actions/coverage-badge-py@v2
