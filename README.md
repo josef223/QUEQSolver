@@ -2,6 +2,18 @@
 
 ![Coverage Image](./coverage.svg)
 
+Tests for macos-latest, ubuntu-latest, windows-latest and
+for Python-Version 3.9, 3.10, 3.11
+
+Feature:
+
+[![Python package](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml/badge.svg?branch=feature)](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml)
+
+Main:
+
+[![Python package](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml/badge.svg?branch=main)](https://github.com/josef223/QUEQSolver/actions/workflows/workflow_01.yml)
+
+
 Full documentation is available at [https://wetterwien22.at/projekte/QUEQSolver](https://wetterwien22.at/projekte/QUEQSolver).
 
 
