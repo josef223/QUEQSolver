@@ -1,5 +1,7 @@
 # QUEQSolver
 
+![My SVG Image](./image.svg)
+
 Full documentation is available at [https://wetterwien22.at/projekte/QUEQSolver](https://wetterwien22.at/projekte/QUEQSolver).
 
 
