@@ -16,6 +16,11 @@ jobs:
         python-version: '3.10'
 
     - name: Push Changes
+      run: git push origin HEAD:feature
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Push Changes
       run: |
        git push https://${{ secrets.TESTB }}@github.com/josef223/QUEQSolver.git HEAD:feature
 
