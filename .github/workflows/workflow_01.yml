@@ -19,8 +19,8 @@ jobs:
       run: |
           curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" https://api.github.com/user
     - name: Push changes
-    if: steps.verify-changed-files.outputs.files_changed == 'true'
-    run: |
+      if: steps.verify-changed-files.outputs.files_changed == 'true'
+      run: |
          git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/josef223/QUEQSolver.git HEAD:feature
 
     - name: Upgrade pip
