@@ -15,6 +15,23 @@ jobs:
       with:
         python-version: '3.10'
 
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Create a Custom File
+      run: echo "This is a test file" > testfile.txt
+
+    - name: Commit the Custom File
+      run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add testfile.txt
+          git commit -m "Add custom test file"
+
+    - name: Push Changes
+      run: git push origin HEAD
+      env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     - name: Test GitHub Token
       run: |
           curl -H "Authorization: token ${{ secrets.GH_TOKEN }}" https://api.github.com/user
