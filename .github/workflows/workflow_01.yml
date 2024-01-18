@@ -17,7 +17,7 @@ jobs:
 
     - name: Push Changes
       run: |
-       git push https://${{ secrets.MY_PAT }}@github.com/josef223/QUEQSolver.git HEAD:feature
+       git push https://${{ secrets.TESTA }}@github.com/josef223/QUEQSolver.git HEAD:feature
 
     - name: Push Changes
       run: git push origin HEAD:feature
