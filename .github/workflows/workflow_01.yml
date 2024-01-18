@@ -20,5 +20,7 @@ jobs:
         git config --local user.email "actions@users.noreply.github.com"
         git config --local user.name "GitHub Actions"
         git add .
-        git commit -m "Test push from GitHub Actions"
-        git push
+        git commit -m "Your commit message"
+        git push --set-upstream origin HEAD:<branch-name> --force
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
