@@ -28,10 +28,6 @@ jobs:
     - name: Install the package
       run: pip install .
 
-  #  - name: Generate coverage badge
-  #    uses: tj-actions/coverage-badge-py@v0
-  #    with:
-  #      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Test with pytest, via coverage
       run: coverage run -m pytest
