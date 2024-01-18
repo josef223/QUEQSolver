@@ -32,9 +32,9 @@ jobs:
       run: coverage run -m pytest
       working-directory: ./
 
-    #- name: Generate coverage report
-    #  run: coverage report
-    #  working-directory: ./
+    - name: Generate coverage report
+      run: coverage report
+      working-directory: ./
 
 
 
