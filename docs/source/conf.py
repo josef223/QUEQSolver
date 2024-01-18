@@ -16,7 +16,7 @@ release = '1.0.0'
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/home/pi/github/QUEQSolver'))
+sys.path.insert(0, os.path.abspath('/home/pi/github/QUEQSolver/QUEQSolver'))
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'nbsphinx']
 
