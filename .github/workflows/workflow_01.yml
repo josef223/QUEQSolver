@@ -41,7 +41,7 @@ jobs:
 
     - name: Run coverage
       run: |
-        coverage run ...
+        coverage run pytest
         coverage report -m
         working-directory: ./
 
