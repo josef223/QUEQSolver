@@ -8,7 +8,7 @@
 
 last modified: 4.11.2023
 '''
-###import sys
+import sys
 ###from QUEQSolver.calcStep import quadraticEQSolver
 ###from QUEQSolver.plotQE import QEplot
 
@@ -106,15 +106,15 @@ def run_quadraticEQSolver(a,b,c):
         QEplot(a,b,c,x1,x2)
 
 def main():
-    import sys
+    [a,b,c]=inputValues()
     from os.path import dirname, abspath
     parent_dir=dirname(dirname(abspath(__file__)))
     if parent_dir not in sys.path:
         sys.path.insert(0,parent_dir)
-    #from QUEQSoler.qesolver import *
+
     from QUEQSolver.calcStep import quadraticEQSolver
     from QUEQSolver.plotQE import QEplot
-    [a,b,c]=inputValues()
+
     plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
     if plotable:
         QEplot(a,b,c,x1,x2)
