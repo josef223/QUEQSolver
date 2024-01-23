@@ -9,8 +9,8 @@
 last modified: 4.11.2023
 '''
 import sys
-###from QUEQSolver.calcStep import quadraticEQSolver
-###from QUEQSolver.plotQE import QEplot
+from QUEQSolver.calcStep import quadraticEQSolver
+from QUEQSolver.plotQE import QEplot
 
 # Pydantic:
 from pydantic import FilePath
@@ -100,8 +100,6 @@ def run_quadraticEQSolver(a,b,c):
     Args:
         a, b, c (int, float, str, complex): input coefficients of the quadratic equation
     '''
-    from QUEQSolver.calcStep import quadraticEQSolver
-    from QUEQSolver.plotQE import QEplot
     coeffs = Coefficients(a=a, b=b, c=c)
     plotable,x1,x2,a,b,c=quadraticEQSolver(coeffs.a,coeffs.b,coeffs.c)
     if plotable:
@@ -109,14 +107,6 @@ def run_quadraticEQSolver(a,b,c):
 
 def main():
     [a,b,c]=inputValues()
-    from os.path import dirname, abspath
-    parent_dir=dirname(dirname(abspath(__file__)))
-    if parent_dir not in sys.path:
-        sys.path.insert(0,parent_dir)
-
-    from QUEQSolver.calcStep import quadraticEQSolver
-    from QUEQSolver.plotQE import QEplot
-
     plotable,x1,x2,a,b,c=quadraticEQSolver(a,b,c)
     if plotable:
         QEplot(a,b,c,x1,x2)
