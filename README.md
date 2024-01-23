@@ -1,5 +1,7 @@
 # QUEQSolver
 
+Quadratic Equation Solver that prints out all steps to solve an quadratic equation and plots the solution on a real or complex plane. It can calculate COMPLEX roots, REAL roots and perform symbolic calculation.
+
 ![Coverage Image](./coverage.svg)
 
 Tests for macos-latest, ubuntu-latest, windows-latest and
