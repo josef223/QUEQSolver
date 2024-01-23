@@ -100,6 +100,8 @@ def run_quadraticEQSolver(a,b,c):
     Args:
         a, b, c (int, float, str, complex): input coefficients of the quadratic equation
     '''
+    from QUEQSolver.calcStep import quadraticEQSolver
+    from QUEQSolver.plotQE import QEplot
     coeffs = Coefficients(a=a, b=b, c=c)
     plotable,x1,x2,a,b,c=quadraticEQSolver(coeffs.a,coeffs.b,coeffs.c)
     if plotable:
