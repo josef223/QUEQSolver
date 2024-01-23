@@ -18,7 +18,7 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('/home/pi/github/QUEQSolver/QUEQSolver'))
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'nbsphinx']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'nbsphinx', 'sphinx_rtd_dark_mode']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -28,4 +28,4 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
-
+default_dark_mode=False
