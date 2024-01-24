@@ -3,21 +3,64 @@
 
 import numpy as np
 import sympy as sp
+from pydantic import BaseModel, field_validator, ConfigDict
+from typing import Union
 
 def is_numeric(value):
+    '''
+    Function to check if the value is numeric (int, float or complex)
+    If value is a string it returns False.
+
+    Args:
+        value (any type): input variable that is checked, any type
+
+    Returns:
+        bool: True if value is numeric (int, float or complex)
+    '''
     return isinstance(value, (int, float, complex))
 
+
 def is_numeric_or_complex(value):
+    '''
+    Function checks if a value can be converted to a complex number
+    If value is a string it returns False.
+
+    Args:
+        value (any type): input variable that is checked, any type
+
+    Returns:
+        bool: True if the value can be converted to complex datatype
+    '''
+
     try:
         complex(value)
-    except ValueError:
+    except (ValueError, TypeError):
         # The conversion failed, so it's not a numeric input
         return False
     else:
         # The conversion succeeded, so it's a numeric input
         return True
-    
+
+class Coefficients(BaseModel):
+     a: Union[str, float, complex, int]
+     b: Union[str, float, complex, int]
+     c: Union[str, float, complex, int]
+     model_config = ConfigDict(arbitrary_types_allowed=True, extra='ignore')
+
 def quadraticEQSolver(a,b,c):
+    '''
+    Function solved a quadratic equation and prints all steps
+
+    Args:
+        a, b, c (Union[str, float, complex, int]): input coefficients of the quadratic equation
+
+    Returns:
+        tuple: A tuple containing a boolean if the equation is plotable, the roots x1 and x2 as well as the coefficients a, b, c
+    '''
+    coeffs = Coefficients(a=a, b=b, c=c)
+    # Use validated coefficients
+    a, b, c = coeffs.a, coeffs.b, coeffs.c
+##############################################
     # Assign values as strings
     #a=5; b=8; c=3
     #a=1; b=3; c=8
@@ -64,7 +107,11 @@ def quadraticEQSolver(a,b,c):
     x_sym = sp.symbols('x')
     equation = sp.Eq(x_sym**2 + p_expr*x_sym + q_expr, 0)
     solutions = sp.solve(equation, x_sym)
-    x2, x1 = solutions
+    if len(solutions) == 1:
+        # Only one solution (repeated root)
+        x1 = x2 = solutions[0]
+    else:
+        x2, x1 = solutions
 
     print(f'x1 = {x1.evalf()} \nx2 = {x2.evalf()}')
     return plotable,x1,x2,a,b,c

@@ -11,6 +11,10 @@ Welcome to QUEQSolver's documentation!
    :caption: Contents:
 
    qesolver.rst
+   calcStep.rst
+   plotQE.rst
+   examples.rst
+   install.rst
 
 Indices and tables
 ==================
@@ -18,3 +22,6 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+`Impressum <https://wetterwien22.at/impressum.html>`_
+

@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'QUEQSolver'
-copyright = '2023, 1'
-author = '1'
+copyright = '2023 - github:josef223'
+author = 'josef223'
 release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
@@ -16,9 +16,9 @@ release = '1.0.0'
 
 import os
 import sys
-sys.path.insert(0, os.path.abspath('/home/pi/github/QUEQSolver'))
+sys.path.insert(0, os.path.abspath('/home/pi/github/QUEQSolver/QUEQSolver'))
 
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon', 'nbsphinx', 'sphinx_rtd_dark_mode']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -28,4 +28,4 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
-
+default_dark_mode=False
